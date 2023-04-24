@@ -1,6 +1,7 @@
-function Banner() {
-	const title = 'Grass Store'
-	return <h1>{title}</h1>
+import '../styles/Banner.css'
+
+function Banner({ children }) {
+	return <div className='lmj-banner'>{children}</div>
 }
 
 export default Banner
