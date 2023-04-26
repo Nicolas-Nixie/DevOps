@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# DevOps
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce projet est faite en React avec la commande create-react app et npm. C'est un site e-shop de plante
 
-## Available Scripts
+#### Repository
 
-In the project directory, you can run:
+Le projet est sur un repository GitHub
 
-### `npm start`
+#### Deploiement
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Le déploiement est fait via vercel directement depuis le repo Git.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Convention de developpement
 
-### `npm test`
+Chacun des developpeur ngenere une nouvelle branche deppuis la commande `git branche` et travail sur celle-ci. Des lors qu'il souhaite ajouter une nouvelle fonction, il nomme sa bracnche : 'feature/fonctionalité'. Pour le moment la version de ce projet n'est que la premiere et aucune nomenclature n'a encore été attribué.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Versioning
 
-### `npm run build`
+Le versionning se fait via le packae 'git cz' et chaque commit contient les element complet auquel il fait référence.
+Une fois la branche 'push' le code est alors véifié sur le repo, modifié au besoin puis une 'merge request' est émise pour la branche feature soit mergé avec la branche 'main'
+Une fois la merge les testes de la CI se mettent en fonctions.
+Le projet deployé est celui contenu sur la branche 'main'
+Autant que possible, chacun des developpeur a 'push' ces avancées plusieurs fois par jour
+ 
+### Testing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Les tests sont effectué via 'jest' e 'jest-dom'
+Les testes sont effectués en local via la commande : `npm test`.
+Ils sont contenu dans le dossier './scr/test'. Chacun des tests sont nomées en fonction de ce qu'il test : 'untiTested.test.js'
+Pour le moment suel des tetsts unitaire ont été mise en places.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Sur la CI les testent sot effectué en autooatique par 'vercel.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Utilisation
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Nous avons choisis d'utiliser GitHub pour sa simplicité, son coput (gratuit) et surtout car chacun des developpeur posède djà un compte.
+Pour le deploiement nous avons choisi Vercel car notre niveau technique et bas et la simplicité et son coût et le plus adapter pour nous.
+D'autre part nous n'avons pas utilisé l'ESLint par esprit de simplicité car notre niveau technique ne permets pas une utilisaton simple et optimal de l'outil.
+Git cz a été choisi pour les commit precis qu'il permets de faire ainsi que sa simplicité d'utilisation.
+Les tests sont effectué via 'jest' e 'jest-dom' car il coresspond bien au testing d'application web React.
+Par manque de teps nous n'avons pas eu le temps de faire de test d'integration ni E2E
