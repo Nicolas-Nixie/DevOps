@@ -17,7 +17,7 @@ function App() {
 		<div>
 			<Banner>
 				<img src={logo} alt='logo-la-maison-jungle' className='lmj-logo' />
-				<h1 className='lmj-title'>Grass Shop</h1>
+				<h1 className='lmj-title'>Meeko</h1>
 			</Banner>
 			<div className='lmj-layout-inner'>
 				<Cart cart={cart} updateCart={updateCart} />
