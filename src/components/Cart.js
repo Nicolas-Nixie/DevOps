@@ -11,6 +11,25 @@ function Cart({ cart, updateCart }) {
 		document.title = `LMJ: ${total}€ d'achats`
 	}, [total])
 
+	
+	const handleRemove = (amount) => {
+		amount = amount - 1
+		console.log('F1', amount)
+		return amount
+	}
+
+	const handleAdd = (amount) => {
+		amount = amount + 1
+		console.log('F2', amount)
+		return amount
+	}
+
+	const handleTrash = (amount) => {
+		amount = 0
+		console.log('F3', amount)
+		return amount
+	}
+
 	return isOpen ? (
 		<div className='lmj-cart'>
 			<button
@@ -24,8 +43,27 @@ function Cart({ cart, updateCart }) {
 					<h2>Panier</h2>
 					<ul>
 						{cart.map(({ name, price, amount }, index) => (
-							<div key={`${name}-${index}`}>
+							<div className='modif-nbr-artcle' key={`${name}-${index}`}>
 								{name} {price}€ x {amount}
+								{console.log(amount)}
+								<a> </a>
+								<button
+									className='lmj-cart-toggle-button'
+									onClick={() => handleRemove}
+								>
+									<ion-icon name="remove-outline"></ion-icon>
+								</button>
+								<button
+									className='lmj-cart-toggle-button'
+									onClick={() => handleAdd}
+								>
+									<ion-icon name="add-outline"></ion-icon>
+								</button>								<button
+									className='lmj-cart-toggle-button'
+									onClick={() => handleTrash}
+								>
+									<ion-icon name="trash-bin-outline"></ion-icon>
+								</button>
 							</div>
 						))}
 					</ul>
