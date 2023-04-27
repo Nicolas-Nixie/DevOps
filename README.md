@@ -39,3 +39,6 @@ D'autre part nous n'avons pas utilisé l'ESLint par esprit de simplicité car no
 Git cz a été choisi pour les commit precis qu'il permets de faire ainsi que sa simplicité d'utilisation.
 Les tests sont effectué via 'jest' e 'jest-dom' car il coresspond bien au testing d'application web React.
 Par manque de teps nous n'avons pas eu le temps de faire de test d'integration ni E2E
+
+#### Workflows 
+Un fichier workfow test a été mise en place, mais l'utilisation pertinente de cette fonctionalité n'est pas, pour le moment, justifié dans ce projet en l'état
