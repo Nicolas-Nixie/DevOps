@@ -2,10 +2,14 @@ import { useState } from 'react'
 import { plantList } from '../datas/plantList'
 import PlantItem from './PlantItem'
 import Categories from './Categories'
+import SortingProductBy from './SortingProductBy'
 import '../styles/ShoppingList.css'
 
 function ShoppingList({ cart, updateCart }) {
 	const [activeCategory, setActiveCategory] = useState('')
+	const [activeSorting, setActiveSorting] = useState('')
+	const [activeSortingType, setActiveSortingType] = useState('')
+
 	const categories = plantList.reduce(
 		(acc, elem) =>
 			acc.includes(elem.category) ? acc : acc.concat(elem.category),
@@ -27,14 +31,33 @@ function ShoppingList({ cart, updateCart }) {
 		}
 	}
 
+	function setSortingBy(sort, type){
+		setActiveSorting(sort)
+		setActiveSortingType(type)
+		if(sort === "croissant"){
+			plantList.sort((a, b) => (a[type] > b[type]) ? 1 : -1)
+		}if (sort === "decroissant") {
+			plantList.sort((a, b) => (a[type] < b[type]) ? 1 : -1)
+		}
+	}
+
+
 	return (
 		<div className='lmj-shopping-list'>
-			<Categories
-				categories={categories}
-				setActiveCategory={setActiveCategory}
-				activeCategory={activeCategory}
-			/>
-
+			<div>
+				<Categories
+					categories={categories}
+					setActiveCategory={setActiveCategory}
+					activeCategory={activeCategory}
+				/>
+				<SortingProductBy
+					activeSorting={activeSorting}
+					setSortingBy={setSortingBy}
+					activeSortingType={activeSortingType}
+				/>
+			</div>
+			
+			
 			<ul className='lmj-plant-list'>
 				{plantList.map(({ id, cover, name, water, light, price, category }) =>
 					!activeCategory || activeCategory === category ? (
